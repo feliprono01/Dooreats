@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dooreats - Configuración de Asistencia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="menu.html">
+      <img src="assets/logo.png" alt="Dooreats" class="logo">
+    </a>
+
+    <h2>Asistencia de <span id="usuarioHeader"></span></h2>
+
+    <div class="header-actions">
+      <a href="perfil.html" class="btn-nav btn-nav--outline">
+        Mi Perfil
+      </a>
+      <button onclick="logout()">Cerrar sesión</button>
+    </div>
+  </header>
+
+
+  <div class="page-container">
+    <header class="page-header">
+      <h1 class="titulo">Configuración de Asistencia</h1>
+    </header>
+
+    <main>
+      <form id="asistenciaForm">
+        <p>Seleccioná los días en los que vas a almorzar:</p>
+
+        <ul class="dias dias-grid">
+          
+          <li class="dia-item">
+            <input type="checkbox" id="dia-lunes" name="dias" value="LUNES">
+            <label for="dia-lunes" class="dia-chip"><span class="dia-tick" aria-hidden="true"></span>Lunes</label>
+          </li>
+          <li class="dia-item">
+            <input type="checkbox" id="dia-martes" name="dias" value="MARTES">
+            <label for="dia-martes" class="dia-chip"><span class="dia-tick" aria-hidden="true"></span>Martes</label>
+          </li>
+          <li class="dia-item">
+            <input type="checkbox" id="dia-miercoles" name="dias" value="MIERCOLES">
+            <label for="dia-miercoles" class="dia-chip"><span class="dia-tick"
+                aria-hidden="true"></span>Miércoles</label>
+          </li>
+          <li class="dia-item">
+            <input type="checkbox" id="dia-jueves" name="dias" value="JUEVES">
+            <label for="dia-jueves" class="dia-chip"><span class="dia-tick" aria-hidden="true"></span>Jueves</label>
+          </li>
+          <li class="dia-item">
+            <input type="checkbox" id="dia-viernes" name="dias" value="VIERNES">
+            <label for="dia-viernes" class="dia-chip"><span class="dia-tick" aria-hidden="true"></span>Viernes</label>
+          </li>
+          
+          </ul>
+
+
+        <button type="submit" class="btn-primary">Guardar asistencia</button>
+      </form>
+
+      <div id="asisMessage" class="message"></div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script> 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      requireLogin("empleado"); // protege la página
+      mostrarUsuarioEnHeader("usuarioHeader"); // muestra usuario logueado
+    });
+  </script>
+</body>
+
+</html>

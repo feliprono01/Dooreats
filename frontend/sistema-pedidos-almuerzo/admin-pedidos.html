@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dooreats - Pedidos Diarios</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="admin-panel.html" class="nav-left">
+      <img src="assets/logo.png" alt="Dooreats" class="logo">
+    </a>
+
+    <h2 class="nav-title">Pedidos Diarios</h2>
+
+    <div class="header-actions header-actions--stack">
+      <button class="btn-light" onclick="logout()">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <h1 class="titulo">Gestión de Pedidos</h1>
+
+    <div class="filtros">
+      <label for="filtroDia">Filtrar por día:</label>
+      <select id="filtroDia">
+        <option value="">-- Todos los días --</option>
+        <option value="LUNES">Lunes</option>
+        <option value="MARTES">Martes</option>
+        <option value="MIERCOLES">Miércoles</option>
+        <option value="JUEVES">Jueves</option>
+        <option value="VIERNES">Viernes</option>
+      </select>
+      </div>
+    
+    <div id="pedidosMessage" class="message" style="margin-top: 15px;"></div>
+
+    <div id="pedidosContainer" class="pedido-resumen"></div>
+
+    <div class="mandar-cocina-actions">
+      <button id="btnMandarCocina" class="btn-accent">Mandar pedidos filtrados a cocina</button>
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin-pedidos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      requireLogin("admin");
+      
+    });
+  </script>
+</body>
+</html>

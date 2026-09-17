@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "empleado": "Joaquín Ceresole",
+    "dia": "Lunes",
+    "plato": "Milanesa con puré",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 2,
+    "empleado": "Santino Bertone",
+    "dia": "Lunes",
+    "plato": "Ensalada César",
+    "estado": "En preparación"
+  },
+  {
+    "id": 3,
+    "empleado": "Felipe Prono",
+    "dia": "Martes",
+    "plato": "Tarta de jamón y queso",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 4,
+    "empleado": "Martín Fernández",
+    "dia": "Miércoles",
+    "plato": "Pechuga a la plancha",
+    "estado": "Enviado a cocina"
+  }
+]

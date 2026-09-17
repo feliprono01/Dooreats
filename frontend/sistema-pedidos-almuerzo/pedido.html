@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dooreats - Pedido en Proceso</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<header class="navbar">
+  <a href="menu.html">
+    <img src="assets/logo.png" alt="Dooreats" class="logo">
+  </a>
+
+  <h2>Bienvenido <span id="usuarioHeader"></span></h2>
+
+  <div class="header-actions">
+    <a href="perfil.html" class="btn-nav btn-nav--outline">
+      Mi Perfil
+    </a>
+    <button onclick="logout()">Cerrar sesión</button>
+  </div>
+</header>
+
+
+<body>
+  <div class="page-container">
+    <header>
+      <h1 class="titulo">Pedido en Proceso</h1>
+      <p>Tu pedido:</p>
+    </header>
+
+    <div id="pedidoResumen" class="pedido-resumen">
+      </div>
+
+    <button id="volverMenu" class="btn-primary">Volver al Menú</button>
+  </div>
+
+  <script src="js/auth.js"></script> 
+  <script src="js/main.js"></script>
+  <script src="js/pedido.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      requireLogin("empleado");
+      mostrarUsuarioEnHeader("usuarioHeader");
+      
+      
+      if (typeof cargarPedidoActual === "function") {
+        cargarPedidoActual();
+      } else {
+        console.error("js/pedido.js no tiene la función cargarPedidoActual()");
+      }
+      
+      // Evento del botón
+      const btnVolver = document.getElementById("volverMenu");
+      if(btnVolver) {
+        btnVolver.addEventListener("click", () => {
+          window.location.href = "menu.html";
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

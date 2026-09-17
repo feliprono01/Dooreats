@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dooreats - Administración de Menú</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="admin-panel.html">
+      <img src="assets/logo.png" alt="Dooreats" class="logo">
+    </a>
+    <h2>Gestión del Menú</h2>
+    <button onclick="logout()">Cerrar sesión</button>
+  </header>
+
+  <div class="page-container">
+    <h1 class="titulo">Administrar Menú Semanal</h1>
+
+    <form id="formPlato" class="form-admin">
+      <label for="dia">Día:</label>
+      <select id="dia" required>
+        <option value="">Selecciona un día</option>
+        <option value="LUNES">Lunes</option>
+        <option value="MARTES">Martes</option>
+        <option value="MIERCOLES">Miércoles</option>
+        <option value="JUEVES">Jueves</option>
+        <option value="VIERNES">Viernes</option>
+      </select>
+
+      <label for="plato">Plato:</label>
+      <input type="text" id="plato" placeholder="Ej: Lasagna de carne" required>
+
+      <button type="submit" class="btn-primary">Agregar Plato</button>
+    </form>
+    
+    <div id="menuAdminMessage" class="message" style="margin-top: 15px;"></div>
+
+    <div id="menuAdminContainer" class="menu-container-admin"></div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin-menu.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      requireLogin("admin");
+      cargarMenuAdmin(); 
+    });
+  </script>
+</body>
+</html>

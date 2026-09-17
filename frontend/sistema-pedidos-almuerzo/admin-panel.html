@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dooreats - Panel de Administración</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+        </a>
+        <h2>Panel de Administración</h2>
+        <button onclick="logout()">Cerrar sesión</button>
+    </header>
+
+
+    <div class="page-container">
+        <h1 class="titulo">Bienvenido, Administrador</h1>
+
+        <div class="admin-summary">
+            <div class="summary-card">
+                <h3>📦 Pedidos de hoy</h3>
+                <p id="metricPedidos">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>👥 Usuarios activos</h3>
+                <p id="metricUsuarios">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>🍲 Platos en menú</h3>
+                <p id="metricPlatos">0</p>
+            </div>
+        </div>
+
+        <div class="admin-dashboard">
+            <a href="admin-menu.html" class="admin-card">
+                <h3>📋 Gestión de Menú</h3>
+                <p>Agregar, editar o eliminar platos del menú semanal.</p>
+            </a>
+
+            <a href="admin-usuarios.html" class="admin-card">
+                <h3>👥 Gestión de Usuarios</h3>
+                <p>Administrar empleados y permisos de acceso.</p>
+            </a>
+
+            <a href="admin-pedidos.html" class="admin-card">
+                <h3>🍽️ Lista de Pedidos</h3>
+                <p>Revisar todos los pedidos diarios de los empleados.</p>
+            </a>
+
+            <a href="admin-historial.html" class="admin-card">
+                <h3>📊 Historial de Pedidos</h3>
+                <p>Consultar pedidos por día, estado o empleado.</p>
+            </a>
+
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script> 
+    <script src="js/main.js"></script>
+    <script src="js/admin-panel.js"></script> 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            requireLogin("admin"); // protege la página solo para admins
+            cargarMetricas();      // Carga las métricas desde la API
+        });
+    </script>
+</body>
+
+</html>

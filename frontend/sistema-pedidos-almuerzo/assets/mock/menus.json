@@ -1,0 +1,22 @@
+[
+  {
+    "dia": "Lunes",
+    "platos": ["Milanesa con puré", "Ensalada César", "Pastas con salsa roja"]
+  },
+  {
+    "dia": "Martes",
+    "platos": ["Pollo al horno con papas", "Tarta de verduras", "Hamburguesa completa"]
+  },
+  {
+    "dia": "Miércoles",
+    "platos": ["Pizza muzzarella", "Sopa de verduras", "Arroz con pollo"]
+  },
+  {
+    "dia": "Jueves",
+    "platos": ["Matambre a la pizza", "Pollo con papas", "Guiso de lentejas"]
+  },
+  {
+    "dia": "Viernes",
+    "platos": ["Milanesas con pure", "Canelones con salsa", "Empanadas de carne"]
+  }
+]

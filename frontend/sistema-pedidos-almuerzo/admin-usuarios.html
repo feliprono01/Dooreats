@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dooreats - Gestión de Usuarios</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="admin-panel.html" class="nav-left">
+            <img src="assets/logo.png" alt="Dooreats" class="logo">
+        </a>
+
+        <h2 class="nav-title">Gestión de Usuarios</h2>
+
+        <div class="header-actions header-actions--stack">
+            <button class="btn-light" onclick="logout()">Cerrar sesión</button>
+        </div>
+    </header>
+
+
+    <main class="page-container">
+        <h1 class="titulo">Usuarios del Sistema</h1>
+
+        <div class="filtros" style="justify-content: space-between; flex-wrap: wrap;">
+            <div style="display:flex; gap:12px; align-items:center;">
+                <label for="filtroRol">Rol:</label>
+                <select id="filtroRol">
+                    <option value="">Todos</option>
+                    <option value="ROLE_EMPLEADO">Empleado</option>
+                    <option value="ROLE_ADMIN">Administrador</option>
+                </select>
+
+                <label for="buscarTexto">Buscar:</label>
+                <input type="text" id="buscarTexto" placeholder="Nombre o email"
+                    style="padding:8px;border:1px solid #ccc;border-radius:6px;" />
+                <button id="btnBuscar" class="btn-primary" style="width:auto;min-width:120px;">Filtrar</button>
+            </div>
+
+            <div>
+                <a href="admin-usuario-nuevo.html" class="btn-primary"
+                    style="width:auto;min-width:160px;display:inline-block;text-align:center;text-decoration:none;">+
+                    Nuevo Usuario</a>
+            </div>
+        </div>
+
+        <div id="usuariosMessage" class="message" style="margin-top: 15px;"></div>
+
+        <div class="tabla-wrapper">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Área</th>
+                        <th>Oficina</th>
+                        <th style="text-align:center;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="usuariosTbody">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admin-usuarios.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            requireLogin("admin");
+            
+        });
+    </script>
+</body>
+
+</html>

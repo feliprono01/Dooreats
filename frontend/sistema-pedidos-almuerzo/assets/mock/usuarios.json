@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "nombreCompleto": "Felipe Prono",
+    "email": "felipe.prono@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "01/09/2025"
+  },
+  {
+    "id": 2,
+    "nombreCompleto": "Santino Bertone",
+    "email": "santino.bertone@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "05/09/2025"
+  },
+  {
+    "id": 3,
+    "nombreCompleto": "Joaquín Ceresole",
+    "email": "joaquin.ceresole@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "07/09/2025"
+  },
+  {
+    "id": 4,
+    "nombreCompleto": "Martín Fernández",
+    "email": "martin.fernandez@empresa.com",
+    "rol": "empleado",
+    "estado": "inactivo",
+    "fechaAlta": "10/09/2025"
+  },
+  {
+    "id": 5,
+    "nombreCompleto": "Admin General",
+    "email": "admin@empresa.com",
+    "rol": "admin",
+    "estado": "activo",
+    "fechaAlta": "15/08/2025"
+  },
+  {
+    "id": 6,
+    "nombreCompleto": "Empleado Demo",
+    "email": "empleado@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "20/08/2025"
+  },
+  {
+    "id": 7,
+    "nombreCompleto": "Lucía Gómez",
+    "email": "lucia.gomez@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "12/09/2025"
+  },
+  {
+    "id": 8,
+    "nombreCompleto": "Pablo Ruiz",
+    "email": "pablo.ruiz@empresa.com",
+    "rol": "empleado",
+    "estado": "inactivo",
+    "fechaAlta": "18/09/2025"
+  },
+  {
+    "id": 9,
+    "nombreCompleto": "Carla Medina",
+    "email": "carla.medina@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "22/09/2025"
+  },
+  {
+    "id": 10,
+    "nombreCompleto": "Bruno Sosa",
+    "email": "bruno.sosa@empresa.com",
+    "rol": "empleado",
+    "estado": "activo",
+    "fechaAlta": "25/09/2025"
+  },
+  {
+    "id": 11,
+    "nombreCompleto": "Valentina Pérez",
+    "email": "valentina.perez@empresa.com",
+    "rol": "admin",
+    "estado": "activo",
+    "fechaAlta": "28/09/2025"
+  },
+  {
+    "id": 12,
+    "nombreCompleto": "Diego Castro",
+    "email": "diego.castro@empresa.com",
+    "rol": "empleado",
+    "estado": "inactivo",
+    "fechaAlta": "30/09/2025"
+  }
+]

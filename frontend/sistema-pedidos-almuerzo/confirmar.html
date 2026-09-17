@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Pedido</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <h2> <span id="usuarioHeader"></span></h2>
+    <button onclick="logout()">Cerrar sesión</button>   
+  </header>
+
+  <main class="page-container">
+    <h1 class="titulo">¿Querés repetir este pedido?</h1>
+    <div id="pedidoConfirmacion" class="pedido-card"></div>
+
+    <div class="botones-confirmacion">
+        <button id="btnConfirmar" class="btn-primary">Confirmar</button>
+        <button id="btnCancelar" class="btn-repetir">Cancelar</button>
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pedido = JSON.parse(localStorage.getItem("pedidoRepetido"));
+      const div = document.getElementById("pedidoConfirmacion");
+
+      if (!pedido) {
+        div.innerHTML = "<p>No hay pedido para confirmar.</p>";
+        return;
+      }
+
+      div.innerHTML = `
+        <h3>Pedido del ${pedido.fecha}</h3>
+        <ul>
+          ${Object.entries(pedido.platos)
+            .map(([dia, plato]) => `<li><strong>${dia}:</strong> ${plato}</li>`)
+            .join("")}
+        </ul>
+      `;
+
+      document.getElementById("btnConfirmar").addEventListener("click", () => {
+        // Guardar como pedido actual y redirigir
+        localStorage.setItem("pedidoActual", JSON.stringify(pedido.platos));
+        window.location.href = "pedido.html";
+      });
+
+      document.getElementById("btnCancelar").addEventListener("click", () => {
+        window.location.href = "historial.html";
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      requireLogin("empleado");
+      mostrarUsuarioEnHeader("usuarioHeader");
+    });
+  </script>
+</body>
+</html>

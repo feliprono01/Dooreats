@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dooreats - Mi Perfil</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="menu.html">
+      <img src="assets/logo.png" alt="Dooreats" class="logo">
+    </a>
+
+    <h2>Mi perfil <span id="usuarioHeader"></span></h2>
+
+    <div class="header-actions">
+      <a href="perfil.html" class="btn-nav btn-nav--outline">
+        Mi Perfil
+      </a>
+      <button onclick="logout()">Cerrar sesión</button>
+    </div>
+  </header>
+
+
+  <main class="page-container">
+    <h1 class="titulo">Perfil de Empleado</h1>
+
+    <section class="profile-grid">
+      <div class="profile-card">
+        <div class="avatar-wrap">
+          <img id="avatarPreview" src="assets/icon/user.svg" alt="avatar">
+          <label class="btn-primary btn-avatar">
+            Cambiar foto
+            <input id="avatarInput" type="file" accept="image/*" hidden>
+          </label>
+        </div>
+
+        <div class="profile-summary">
+          <p><strong>Nombre:</strong> <span id="sumNombre"></span></p>
+          <p><strong>Email:</strong> <span id="sumEmail"></span></p>
+          <p><strong>Rol:</strong> <span id="sumRol"></span></p>
+          <p><strong>Estado:</strong> <span id="sumEstado" class="estado estado--activo">Activo</span></p>
+        </div>
+
+        <div class="profile-actions">
+          <a href="historial.html" class="btn-primary" style="width:100%;">Ver historial</a>
+          <a href="asistencia.html" class="btn-secondary" style="width:100%;">Configurar asistencia</a>
+        </div>
+      </div>
+
+      <div class="profile-forms">
+        <div class="card box">
+          <h3>Datos personales y preferencias</h3>
+          <form id="perfilForm" class="form-admin" style="margin-top:10px;">
+            <div class="grid-2">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" placeholder="Nombre">
+              </div>
+              <div>
+                <label for="apellido">Apellido</label>
+                <input id="apellido" type="text" placeholder="Apellido">
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" type="text" placeholder="+54 9 342 ...">
+              </div>
+              <div>
+                <label for="area">Área / Sector</label>
+                <input id="area" type="text" placeholder="Ej: Sistemas, RRHH">
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <label for="oficina">Oficina / Piso</label>
+                <input id="oficina" type="text" placeholder="Ej: Piso 3, box 12">
+              </div>
+              <div>
+                <label for="dieta">Preferencia alimentaria</label>
+                <select id="dieta">
+                  <option value="">Sin preferencia</option>
+                  <option value="omnivoro">Omnívoro</option>
+                  <option value="vegetariano">Vegetariano</option>
+                  <option value="vegano">Vegano</option>
+                  <option value="celiaco">Celíaco</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="alergias">Alergias / Restricciones (separadas por coma)</label>
+              <input id="alergias" type="text" placeholder="Ej: maní, gluten, lácteos">
+            </div>
+
+            <div class="grid-2">
+              <div class="check-row">
+                <input type="checkbox" id="notifEmail">
+                <label for="notifEmail">Recibir notificaciones por email</label>
+              </div>
+              <div class="check-row">
+                <input type="checkbox" id="notifWhatsapp">
+                <label for="notifWhatsapp">Recibir notificaciones por WhatsApp</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:auto;min-width:160px;">Guardar cambios</button>
+            <span id="perfilMsg" class="message" style="display:inline-block;margin-left:10px;"></span>
+          </form>
+        </div>
+
+        <div class="card box">
+          <h3>Cambiar contraseña</h3>
+          <form id="passForm" class="form-admin" style="margin-top:10px;">
+            <div class="grid-3">
+              <div>
+                <label for="passActual">Actual</label>
+                <input id="passActual" type="password" placeholder="Contraseña actual">
+              </div>
+              <div>
+                <label for="passNueva">Nueva</label>
+                <input id="passNueva" type="password" placeholder="Mínimo 6 caracteres">
+              </div>
+              <div>
+                <label for="passRepite">Repetir nueva</label>
+                <input id="passRepite" type="password" placeholder="Repetir nueva">
+              </div>
+            </div>
+            <button type="submit" class="btn-primary" style="width:auto;min-width:200px;">Actualizar contraseña</button>
+            <span id="passMsg" class="message" style="display:inline-block;margin-left:10px;"></span>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script> 
+  <script src="js/main.js"></script>
+  <script src="js/perfil.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      requireLogin("empleado");
+      mostrarUsuarioEnHeader("usuarioHeader");
+    });
+  </script>
+</body>
+
+</html>
